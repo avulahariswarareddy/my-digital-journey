@@ -1,0 +1,54 @@
+<!--page {"title": "Vedasri Traders, online grocery store", "label": "Vedasri Traders", "nav": "projects", "priority": 0.8, "description": "Vedasri Traders, the online grocery store Avula Hariswara Reddy built for his family's kirana shop in Gachibowli, with a list scanner and admin side.", "project": {"name": "Vedasri Traders", "url": "https://vedasri-traders.vercel.app/", "keywords": "grocery e-commerce, Next.js, Supabase, Gemini OCR, Razorpay, Hyderabad"}, "hero": {"h1": "Vedasri Traders", "lede": "A full online grocery store for our family's kirana shop in Gachibowli. One app with two sides: customers shop, and we run the business from the same place."}} -->
+<section class="sec flush">
+  <div class="wrap">
+    <dl class="facts"><div><dt>My role</dt><dd>Product, design, build and deployment</dd></div><div><dt>Type</dt><dd>Family business</dd></div><div><dt>Built with</dt><dd>Next.js 14, Supabase, Gemini, Razorpay</dd></div><div><dt>Status</dt><dd>Live on the web, Android app on the way</dd></div></dl>
+    <p class="detail-links"><a class="btn btn-pri" href="https://vedasri-traders.vercel.app/" target="_blank" rel="noopener">Visit the store <svg class="ico"><use href="#i-arrow-up-right"/></svg></a></p>
+    <div class="detail">
+      <div class="detail-body">
+        <h2>Why I built it</h2>
+        <p>Customers around Gachibowli are used to ordering groceries from quick-commerce apps. I wanted our own store to offer that same convenience while keeping what a neighbourhood kirana does that big apps don't: credit (khata) for regular customers, bulk prices for businesses buying in quantity, and separate business and personal accounts.</p>
+        <h2>One app, two sides</h2>
+        <p>Customers and our team use the same app. What you see depends on your account's role, and row-level security in the database keeps each side to its own data. Switch between them:</p>
+        <div class="roles-wrap"><div class="dark-card"><div class="roles">
+            <div class="seg" role="tablist" aria-label="Choose a role" data-role="customer">
+              <span class="pill" aria-hidden="true"></span>
+              <button type="button" role="tab" id="t-cust" aria-selected="true" aria-controls="p-cust" data-r="customer">Customer</button>
+              <button type="button" role="tab" id="t-admin" aria-selected="false" aria-controls="p-admin" data-r="admin" tabindex="-1">Admin</button>
+            </div>
+            <div class="role-panel" id="p-cust" role="tabpanel" aria-labelledby="t-cust">
+              <ul>
+                <li>Browse 20 categories, with bulk price tiers for wholesale buyers</li>
+                <li>Scan a handwritten list, pick from alternatives when a match is unsure</li>
+                <li>Offers, wishlist, saved addresses, referrals and rewards</li>
+                <li>Razorpay checkout and live order tracking</li>
+              </ul>
+            </div>
+            <div class="role-panel" id="p-admin" role="tabpanel" aria-labelledby="t-admin" hidden>
+              <ul>
+                <li>Approve new customers when they first check out</li>
+                <li>Scan supplier invoices to record stock intake</li>
+                <li>Khata credit payments, expenses and an analytics dashboard</li>
+                <li>An audit log of admin actions that can't be edited or deleted</li>
+              </ul>
+            </div>
+            <div class="flow"><span class="lbl">How the scanner works</span><b>Photo of a list</b><svg viewBox="0 0 256 256" fill="currentColor"><use href="#i-caret-right"/></svg><b>Gemini reads it</b><svg viewBox="0 0 256 256"><use href="#i-caret-right"/></svg><b>Fuzzy match</b><svg viewBox="0 0 256 256"><use href="#i-caret-right"/></svg><b>In the cart</b></div></div></div></div>
+        <h2>How the list scanner works</h2>
+        <p>A customer takes a photo of their list. Gemini reads the handwriting, then matching code compares each line with our catalogue using fuzzy matching, so small spelling differences still find the right product. When a line could mean more than one item, the customer picks from a few candidates instead of the app guessing. Everything confirmed lands in the cart.</p>
+        <h2>Built to be trusted</h2>
+        <ul class="ticks"><li>Supabase Auth is the only sign-in system, and row-level security in the database keeps each customer to their own data</li><li>A security audit found and fixed a leak between admin and customer data, plus a sign-out bug</li><li>Stock updates run as single database operations, so two people can't buy the last packet at the same time</li><li>The referral system blocks people from referring themselves, enforced inside the database</li></ul>
+        <h2>What's next</h2>
+        <p>The store is live on the web. The Android version, packaged with Capacitor, is the current work in progress.</p>
+        <h2>What I learned</h2>
+        <p>This was the first project where many separate services had to agree with each other: logins, the database, payments, an AI model and the shop's own stock. Two kinds of users sharing one app taught me how row-level security really works, and the audit that found a leak between admin and customer data taught me to test my own assumptions instead of trusting that something looks right.</p>
+      </div>
+      <div class="detail-vis"><div class="phone"><img src="/assets/shot-vedasri.webp" width="400" height="797" alt="Vedasri Traders home screen with grocery categories, search and AI Chef" loading="lazy"></div></div>
+    </div>
+  </div>
+</section>
+<section class="sec flush">
+  <div class="wrap">
+    <h2 class="h-sm">More projects</h2>
+    <div class="related"><a class="rel-card" href="/projects/pg-management-app"><b>PG Management App</b><span>Runs 250+ beds across three properties</span><svg class="ico"><use href="#i-arrow-right"/></svg></a><a class="rel-card" href="/projects/udhaarai"><b>UdhaarAI</b><span>Reads kirana credit notebooks, built in 2 days</span><svg class="ico"><use href="#i-arrow-right"/></svg></a><a class="rel-card" href="/projects/hitex-health-nest"><b>Hitex Health Nest</b><span>A clinic's website and its first steps online</span><svg class="ico"><use href="#i-arrow-right"/></svg></a><a class="rel-card" href="/projects/bhagya-lakshmi-pg-website"><b>Bhagya Lakshmi PG website</b><span>Public website for our family's PG</span><svg class="ico"><use href="#i-arrow-right"/></svg></a></div>
+    <div class="cta-band"><p>Want something like this for your business?</p><a class="btn btn-pri" href="/enquiry">Send an enquiry <svg class="ico"><use href="#i-arrow-up-right"/></svg></a></div>
+  </div>
+</section>

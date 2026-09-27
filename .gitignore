@@ -1,0 +1,21 @@
+# build output (Vercel builds this itself)
+public/
+
+# dependencies and tooling
+node_modules/
+.vercel/
+.env
+.env.*
+*.log
+
+# editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# drafts and archives that shouldn't be published
+*.zip
+*.psd
+drafts/

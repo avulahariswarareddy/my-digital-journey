@@ -1,0 +1,30 @@
+<section class="sec band" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2 data-reveal>Send an enquiry</h2>
+      <p class="lede">Tell me who you are and what you have in mind. The form opens WhatsApp with your message ready, so you just tap send.</p>
+      <ul class="direct">
+        <li><a href="https://wa.me/919000320544" target="_blank" rel="noopener"><svg class="ico"><use href="#i-whatsapp-logo"/></svg>WhatsApp<small>+91 90003 20544</small></a></li>
+        <li><a href="mailto:avulahariswarareddy@gmail.com"><svg class="ico"><use href="#i-envelope-simple"/></svg>Email<small>avulahariswarareddy@gmail.com</small></a></li>
+        <li><a href="https://github.com/avulahariswarareddy" target="_blank" rel="noopener"><svg class="ico"><use href="#i-github-logo"/></svg>GitHub<small>avulahariswarareddy</small></a></li>
+        <li><a href="https://www.instagram.com/harishwar_reddy_avula/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-instagram-logo"/></svg>Instagram<small>harishwar_reddy_avula</small></a></li>
+      </ul>
+    </div>
+    <form class="form" id="enq" novalidate>
+      <div class="field"><label for="f-name">Your name</label><input type="text" id="f-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="e-name"><p class="err" id="e-name"></p></div>
+      <fieldset class="field"><legend>I'm reaching out as</legend>
+        <div class="opts">
+          <input type="radio" name="who" id="w1" value="someone from a university"><label for="w1">University or admissions</label>
+          <input type="radio" name="who" id="w2" value="a business owner"><label for="w2">Business owner</label>
+          <input type="radio" name="who" id="w3" value="a recruiter or mentor"><label for="w3">Recruiter or mentor</label>
+          <input type="radio" name="who" id="w4" value="a student"><label for="w4">Student</label>
+          <input type="radio" name="who" id="w5" value="" checked><label for="w5">Something else</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="f-reply">Where can I reply?</label><input type="text" id="f-reply" name="reply" autocomplete="email" maxlength="120" placeholder="Email or phone"><p class="help">Optional. WhatsApp shows me your number anyway.</p></div>
+      <div class="field"><label for="f-msg">Your message</label><textarea id="f-msg" name="msg" maxlength="1200" required aria-describedby="e-msg" placeholder="A website for my shop, a question about a project, or just hello"></textarea><p class="err" id="e-msg"></p></div>
+      <button class="btn btn-pri" type="submit"><svg class="ico"><use href="#i-whatsapp-logo"/></svg>Send on WhatsApp</button>
+      <p class="sent" id="sent" role="status"><svg class="ico"><use href="#i-check"/></svg><span>WhatsApp opened with your message. Tap send there and I'll reply soon. <a id="sentLink" href="#" target="_blank" rel="noopener" class="sent-link">Open it again</a></span></p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "name": "hariswara-portfolio",
+  "private": true,
+  "description": "Portfolio of Avula Hariswara Reddy",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

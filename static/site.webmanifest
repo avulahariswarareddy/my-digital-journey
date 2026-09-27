@@ -1,0 +1,28 @@
+{
+ "name": "Avula Hariswara Reddy",
+ "short_name": "Hariswara",
+ "description": "Portfolio of Avula Hariswara Reddy, student builder from Hyderabad.",
+ "start_url": "/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F4F8FB",
+ "theme_color": "#0B2A47",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}

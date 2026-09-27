@@ -1,0 +1,386 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node build.mjs",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/inquiry",
+      "destination": "/enquiry",
+      "permanent": true
+    },
+    {
+      "source": "/enquire",
+      "destination": "/enquiry",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/enquiry",
+      "permanent": true
+    },
+    {
+      "source": "/hire",
+      "destination": "/enquiry",
+      "permanent": true
+    },
+    {
+      "source": "/message",
+      "destination": "/enquiry",
+      "permanent": true
+    },
+    {
+      "source": "/contact-me",
+      "destination": "/enquiry",
+      "permanent": true
+    },
+    {
+      "source": "/work",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/vedasri",
+      "destination": "/projects/vedasri-traders",
+      "permanent": true
+    },
+    {
+      "source": "/vedasri-traders",
+      "destination": "/projects/vedasri-traders",
+      "permanent": true
+    },
+    {
+      "source": "/grocery",
+      "destination": "/projects/vedasri-traders",
+      "permanent": true
+    },
+    {
+      "source": "/pg-app",
+      "destination": "/projects/pg-management-app",
+      "permanent": true
+    },
+    {
+      "source": "/pg-management",
+      "destination": "/projects/pg-management-app",
+      "permanent": true
+    },
+    {
+      "source": "/udhaar",
+      "destination": "/projects/udhaarai",
+      "permanent": true
+    },
+    {
+      "source": "/udhaarai",
+      "destination": "/projects/udhaarai",
+      "permanent": true
+    },
+    {
+      "source": "/tks",
+      "destination": "/projects/udhaarai",
+      "permanent": true
+    },
+    {
+      "source": "/hitex",
+      "destination": "/projects/hitex-health-nest",
+      "permanent": true
+    },
+    {
+      "source": "/clinic",
+      "destination": "/projects/hitex-health-nest",
+      "permanent": true
+    },
+    {
+      "source": "/pg",
+      "destination": "/projects/bhagya-lakshmi-pg-website",
+      "permanent": true
+    },
+    {
+      "source": "/bhagya-lakshmi",
+      "destination": "/projects/bhagya-lakshmi-pg-website",
+      "permanent": true
+    },
+    {
+      "source": "/pg-website",
+      "destination": "/projects/bhagya-lakshmi-pg-website",
+      "permanent": true
+    },
+    {
+      "source": "/experience",
+      "destination": "/internships",
+      "permanent": true
+    },
+    {
+      "source": "/internship",
+      "destination": "/internships",
+      "permanent": true
+    },
+    {
+      "source": "/law",
+      "destination": "/internships",
+      "permanent": true
+    },
+    {
+      "source": "/robotics",
+      "destination": "/internships",
+      "permanent": true
+    },
+    {
+      "source": "/aquamind",
+      "destination": "/internships",
+      "permanent": true
+    },
+    {
+      "source": "/python",
+      "destination": "/internships",
+      "permanent": true
+    },
+    {
+      "source": "/school",
+      "destination": "/academics",
+      "permanent": true
+    },
+    {
+      "source": "/marks",
+      "destination": "/academics",
+      "permanent": true
+    },
+    {
+      "source": "/education",
+      "destination": "/academics",
+      "permanent": true
+    },
+    {
+      "source": "/olympiads",
+      "destination": "/academics",
+      "permanent": true
+    },
+    {
+      "source": "/certificates",
+      "destination": "/academics",
+      "permanent": true
+    },
+    {
+      "source": "/sport",
+      "destination": "/sports",
+      "permanent": true
+    },
+    {
+      "source": "/basketball",
+      "destination": "/sports",
+      "permanent": true
+    },
+    {
+      "source": "/gym",
+      "destination": "/sports",
+      "permanent": true
+    },
+    {
+      "source": "/running",
+      "destination": "/sports",
+      "permanent": true
+    },
+    {
+      "source": "/service",
+      "destination": "/volunteering",
+      "permanent": true
+    },
+    {
+      "source": "/volunteer",
+      "destination": "/volunteering",
+      "permanent": true
+    },
+    {
+      "source": "/robin-hood-army",
+      "destination": "/volunteering",
+      "permanent": true
+    },
+    {
+      "source": "/rha",
+      "destination": "/volunteering",
+      "permanent": true
+    },
+    {
+      "source": "/questions",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/faqs",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/me",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/bio",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/achievements",
+      "destination": "/academics#trophies",
+      "permanent": true
+    },
+    {
+      "source": "/trophies",
+      "destination": "/academics#trophies",
+      "permanent": true
+    },
+    {
+      "source": "/awards",
+      "destination": "/academics#trophies",
+      "permanent": true
+    },
+    {
+      "source": "/medal",
+      "destination": "/sports",
+      "permanent": true
+    },
+    {
+      "source": "/gurukul",
+      "destination": "/sports",
+      "permanent": true
+    },
+    {
+      "source": "/community",
+      "destination": "/volunteering",
+      "permanent": true
+    },
+    {
+      "source": "/monsoon-run",
+      "destination": "/volunteering#running",
+      "permanent": true
+    },
+    {
+      "source": "/runs",
+      "destination": "/volunteering#running",
+      "permanent": true
+    },
+    {
+      "source": "/systems",
+      "destination": "/projects#systems",
+      "permanent": true
+    },
+    {
+      "source": "/story",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/919000320544",
+      "permanent": false
+    },
+    {
+      "source": "/wa",
+      "destination": "https://wa.me/919000320544",
+      "permanent": false
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/avulahariswarareddy",
+      "permanent": false
+    },
+    {
+      "source": "/code",
+      "destination": "https://github.com/avulahariswarareddy",
+      "permanent": false
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://www.instagram.com/harishwar_reddy_avula/",
+      "permanent": false
+    },
+    {
+      "source": "/insta",
+      "destination": "https://www.instagram.com/harishwar_reddy_avula/",
+      "permanent": false
+    },
+    {
+      "source": "/python-app",
+      "destination": "https://my-portfoliogit-s24yeckj6yxcos4ve6ymyf.streamlit.app/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains"
+        }
+      ]
+    },
+    {
+      "source": "/vendor/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(favicon.ico|icon-192.png|icon-512.png|apple-touch-icon.png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    },
+    {
+      "source": "/thank-you",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}

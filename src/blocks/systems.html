@@ -1,0 +1,60 @@
+<section class="sec flush" id="systems">
+  <div class="wrap">
+    <div class="sys-head">
+      <h2 data-reveal>A website is only one piece.</h2>
+      <div class="sys-intro" data-stagger>
+        <p class="lede">Building for real businesses changed how I look at technology. A website stopped being a page to design. I started asking how people find it, how they get in touch, where the information lives, and which small jobs could run on their own.</p>
+        <p class="lede">Each project added another part of that picture. Pick one to see which parts it needed.</p>
+      </div>
+    </div>
+
+    <div class="sys" id="sys">
+      <div class="sys-filter" role="group" aria-label="Show the parts each project uses">
+        <button type="button" class="sys-f" data-f="all" aria-pressed="true">All projects</button>
+        <button type="button" class="sys-f" data-f="ved" aria-pressed="false">Vedasri Traders</button>
+        <button type="button" class="sys-f" data-f="app" aria-pressed="false">PG app</button>
+        <button type="button" class="sys-f" data-f="site" aria-pressed="false">PG website</button>
+        <button type="button" class="sys-f" data-f="hitex" aria-pressed="false">Hitex Health Nest</button>
+        <button type="button" class="sys-f" data-f="udhaar" aria-pressed="false">UdhaarAI</button>
+      </div>
+
+      <ol class="sys-map">
+        <li class="sys-row">
+          <p class="sys-q"><span class="mono">01</span>How do people find it?</p>
+          <ul class="sys-nodes">
+            <li><button type="button" class="sys-n" data-p="ved site hitex" data-d="The part people see. A shop, a clinic and our PG each needed a site that answers a visitor's first questions quickly.">Website</button></li>
+            <li><button type="button" class="sys-n" data-p="hitex" data-d="For Hitex Health Nest I helped set up the clinic's Instagram and plan its first posts, using ChatGPT to draft and test ideas for content.">Instagram and content</button></li>
+            <li><button type="button" class="sys-n" data-p="site" data-d="I run Meta and ChatGPT ads for Bhagya Lakshmi PG. A good website still needs a way for the right people to come across it.">Online ads</button></li>
+            <li><button type="button" class="sys-n" data-p="ved site hitex udhaar" data-d="Vedasri Traders, UdhaarAI and Hitex are deployed on Vercel. The PG website runs on its own domain, bhagyalakshmi-pg.com.">Hosting and domains</button></li>
+          </ul>
+        </li>
+        <li class="sys-row">
+          <p class="sys-q"><span class="mono">02</span>How do they get in touch?</p>
+          <ul class="sys-nodes">
+            <li><button type="button" class="sys-n" data-p="site hitex" data-d="The PG enquiry form and the clinic's three-step booking both finish as a ready-to-send WhatsApp message, because that is where people already reply.">Forms and booking</button></li>
+            <li><button type="button" class="sys-n" data-p="app site hitex" data-d="The PG app sends messages to tenants through the Meta WhatsApp API. The PG website and Hitex hand enquiries and bookings to WhatsApp.">WhatsApp</button></li>
+            <li><button type="button" class="sys-n" data-p="site hitex" data-d="The PG website and Hitex both have an assistant that runs in the browser with no external API, so it answers common questions instantly.">Assistants</button></li>
+          </ul>
+        </li>
+        <li class="sys-row">
+          <p class="sys-q"><span class="mono">03</span>Where does the information live?</p>
+          <ul class="sys-nodes">
+            <li><button type="button" class="sys-n" data-p="ved app udhaar" data-d="Supabase holds the products, orders, tenants, rent and credit ledgers. Designing those tables is where I learned how much the rest of an app depends on them.">Database</button></li>
+            <li><button type="button" class="sys-n" data-p="ved app udhaar" data-d="Customers and admins in Vedasri Traders, owners and managers in the PG app. The limits are enforced in the database, not just hidden in the interface.">Logins and roles</button></li>
+          </ul>
+        </li>
+        <li class="sys-row">
+          <p class="sys-q"><span class="mono">04</span>What runs behind the scenes?</p>
+          <ul class="sys-nodes">
+            <li><button type="button" class="sys-n" data-p="ved app udhaar" data-d="Gemini reads handwriting: shopping lists and supplier invoices in Vedasri, rent notes and tenant forms in the PG app, credit notebooks in UdhaarAI.">AI APIs</button></li>
+            <li><button type="button" class="sys-n" data-p="ved" data-d="Vedasri Traders takes payments through Razorpay at checkout.">Payments</button></li>
+            <li><button type="button" class="sys-n" data-p="app udhaar" data-d="Branded rent receipts made on demand in the PG app, and payment reminders written from each customer's history in UdhaarAI.">Automation</button></li>
+            <li><button type="button" class="sys-n" data-p="ved app udhaar" data-d="Occupancy and collections for the PG, sales and expenses for the shop, and a business health score in UdhaarAI built as plain maths I can explain.">Analytics</button></li>
+          </ul>
+        </li>
+      </ol>
+
+      <p class="sys-detail" id="sysDetail" aria-live="polite"><span class="sys-detail-k">Tap any part</span><span class="sys-detail-v">to see where I used it and what it does.</span></p>
+    </div>
+  </div>
+</section>

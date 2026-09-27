@@ -1,0 +1,46 @@
+[
+ {
+  "q": "Who is Avula Hariswara Reddy?",
+  "a": "<p>I'm a Class 12 student (Maths, Physics and Chemistry) at Resonance Global Campus in Hyderabad. I learn by building: websites and tools for my family's businesses, a local clinic and kirana shops. I'm heading into an undergraduate degree in Artificial Intelligence and Machine Learning, aiming to start in 2027. <a href=\"/about\">More about me</a>.</p>"
+ },
+ {
+  "q": "What has he built?",
+  "a": "<p>Five projects that are in real use: <a href=\"/projects/vedasri-traders\">Vedasri Traders</a>, an online grocery store for our family shop; a <a href=\"/projects/pg-management-app\">PG management app</a> that runs 250+ beds; <a href=\"/projects/udhaarai\">UdhaarAI</a>, which reads kirana credit notebooks; <a href=\"/projects/hitex-health-nest\">Hitex Health Nest</a>, a clinic's website and first steps online; and the <a href=\"/projects/bhagya-lakshmi-pg-website\">Bhagya Lakshmi PG website</a>.</p>"
+ },
+ {
+  "q": "Does he write the code himself?",
+  "a": "<p>I use AI coding assistants, mostly Claude, to write a lot of the code, and I'm open about that. My part is deciding what to build, how the pieces connect (database, logins, WhatsApp, payments, AI), testing it with the people who use it, and fixing what breaks. I also learned Python from scratch in an internship and built and deployed my own Streamlit app.</p>"
+ },
+ {
+  "q": "What has he learned from building for real businesses?",
+  "a": "<p>That a website is only one piece. Working on our PG and on Hitex Health Nest pulled me into ads, Instagram, WhatsApp and how a customer gets from finding a business to getting a reply. I started thinking in systems, not single pages. <a href=\"/#systems\">See how the pieces connect</a>.</p>"
+ },
+ {
+  "q": "What are his academic achievements?",
+  "a": "<p>96.8% in Class 11 (455 out of 470), with full marks in Maths IB, Physics and Chemistry. At Bhashyam Blooms I was class topper in Grade 8, second academic topper of the Grade 8 cohort for 2022-23, class second in Grade 9, and second in a Ramanujan Day maths test. Also Science and Maths Olympiads. <a href=\"/academics\">See the academics page</a>.</p>"
+ },
+ {
+  "q": "Can he build a website or app for my business?",
+  "a": "<p>Yes. I take on websites and small apps: fast sites with WhatsApp booking or enquiries, offline AI assistants, and simple internal tools like dashboards. Pricing depends on what you need, so <a href=\"/enquiry\">send an enquiry</a> with what your business does and what you'd like built.</p>"
+ },
+ {
+  "q": "How do I contact him?",
+  "a": "<p>The quickest way is the <a href=\"/enquiry\">enquiry form</a>, which opens WhatsApp with your message ready. You can also email <a href=\"mailto:avulahariswarareddy@gmail.com\">avulahariswarareddy@gmail.com</a> or message +91 90003 20544 on WhatsApp.</p>"
+ },
+ {
+  "q": "What does he do outside of building?",
+  "a": "<p>50 drives with the Robin Hood Army, serving meals and teaching children who aren't in school. I volunteered on traffic and route support at the Hyderabad Monsoon Run 2026, and I take part in runs like the Pink Power Run. Also the gym, which I've kept up since Class 11. See <a href=\"/volunteering\">community</a> and <a href=\"/sports\">sport</a>.</p>"
+ },
+ {
+  "q": "Is it Hariswara or Harishwar?",
+  "a": "<p>My full name is Avula Hariswara Reddy. Older certificates spell it Harishwar Reddy A or Hariswar Reddy A, and friends often write Harishwar. It's all the same person.</p>"
+ },
+ {
+  "q": "What does he want to study?",
+  "a": "<p>An undergraduate degree in Artificial Intelligence and Machine Learning. I've used AI in real projects, like reading handwriting and answering questions offline, and now I want to understand properly how it works underneath.</p>"
+ },
+ {
+  "q": "What is The Knowledge Society, and how did he get in?",
+  "a": "<p>TKS is a 10-month accelerator for teenagers that started in Silicon Valley. I entered its Prompt to Product challenge with <a href=\"/projects/udhaarai\">UdhaarAI</a>, built in two days, reached the interview round and was selected for the TKS virtual programme.</p>"
+ }
+]

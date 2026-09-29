@@ -110,7 +110,9 @@ form.addEventListener('submit',e=>{
   t+='\n\n(Sent from your portfolio website)';
   const url='https://wa.me/919000320544?text='+encodeURIComponent(t);
   if(window.__inline){$('#sentLink').href=url;$('#sent').classList.add('show');window.open(url,'_blank','noopener');return}
-  try{sessionStorage.setItem('wa',url)}catch(err){}
+  /* the printer on /thank-you prints exactly what was typed, so keep it before leaving the page */
+  const whoEl=form.querySelector('input[name="who"]:checked'),whoLabel=whoEl&&whoEl.value?(form.querySelector(`label[for="${whoEl.id}"]`)||{}).textContent||'':'';
+  try{sessionStorage.setItem('wa',url);sessionStorage.setItem('enq',JSON.stringify({name,who:whoLabel,reply,msg,at:Date.now()}))}catch(err){}
   window.open(url,'_blank','noopener');
   location.href='/thank-you';
 });
@@ -167,17 +169,29 @@ if(ind){
   addEventListener('resize',again);document.fonts&&document.fonts.ready.then(again);
 }
 
-/* Pink Power Run: counts down, then flips to finished */
-(function(){
-  const now=new Date(),race=new Date(2026,8,27);
-  const days=Math.round((race-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/864e5);
-  const st=$('#runState'),d=$('#runDays'),u=$('#runUnit');
-  if(!st||!d||!u)return;
-  if(days>1){d.textContent=days;u.textContent='days to go';st.textContent='Running on 27 September 2026'}
-  else if(days===1){d.textContent='1';u.textContent='day to go';st.textContent='Running tomorrow'}
-  else if(days===0){d.textContent='Today';u.textContent='race day';st.textContent='Running today'}
-  else{d.textContent='Ran';u.textContent='27 Sep 2026';st.textContent='Finished on 27 September 2026'}
-})();
+/* Fridge magnets: a slight pull toward the pointer, and a small snap when one is picked.
+   On touch, the first tap lifts a magnet and shows its caption; a second tap opens it. */
+const fridge=$('#fridge');
+if(fridge){
+  const mags=$$('.mag',fridge),fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(fine&&!reduce)mags.forEach(m=>{
+    m.addEventListener('pointermove',e=>{const r=m.getBoundingClientRect();m.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5)*6);m.style.setProperty('--my',((e.clientY-r.top)/r.height-.5)*6)});
+    m.addEventListener('pointerleave',()=>{m.style.setProperty('--mx',0);m.style.setProperty('--my',0)});
+  });
+  mags.forEach(m=>m.addEventListener('click',e=>{
+    if(!fine&&!m.classList.contains('on')){e.stopImmediatePropagation();mags.forEach(x=>x.classList.toggle('on',x===m))}
+    m.classList.remove('snap');void m.offsetWidth;m.classList.add('snap');
+  },true));
+  document.addEventListener('click',e=>{if(!e.target.closest('.mag'))mags.forEach(x=>x.classList.remove('on'))});
+}
+
+/* Pink Power Run medal: a few pixels of parallax against the certificate */
+const ppr=$('#pprVis');
+if(ppr&&!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+  const medal=$('.ppr-medal',ppr);
+  ppr.addEventListener('pointermove',e=>{const r=ppr.getBoundingClientRect();medal.style.setProperty('--px',((e.clientX-r.left)/r.width-.5)*-10);medal.style.setProperty('--py',((e.clientY-r.top)/r.height-.5)*-8)});
+  ppr.addEventListener('pointerleave',()=>{medal.style.setProperty('--px',0);medal.style.setProperty('--py',0)});
+}
 
 /* Chat on phones: follow the keyboard, lock the page behind */
 const vv=window.visualViewport;

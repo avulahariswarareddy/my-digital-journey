@@ -795,3 +795,181 @@ dialog.lb.cut img{box-shadow:none;border-radius:0;max-height:76svh;filter:drop-s
 .chat-head>div{min-width:0}
 .chat-head span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .chat-head b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== The archive: latest milestone, then chapters in the order they happened ===== */
+.arc{margin-top:clamp(72px,9vw,120px)}
+.arc-meta{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.arc-meta li{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2)}
+.arc-link{margin-top:18px}
+.doc{position:relative;display:block;width:100%;border:0;padding:0;background:#fff;cursor:zoom-in;border-radius:6px;rotate:-2deg;box-shadow:0 1px 2px rgba(11,34,57,.1),0 30px 60px -30px rgba(6,20,36,.55);transition:rotate var(--d-slow) var(--ease),translate var(--d-slow) var(--ease),box-shadow var(--d-slow) var(--ease)}
+.doc img{width:100%;border-radius:6px}
+.doc-zoom{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:rgba(11,34,57,.84);color:#fff;font-size:.78rem;font-weight:560;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.doc-zoom .ico{width:14px;height:14px}
+@media (hover:hover) and (pointer:fine){.doc:hover{rotate:0deg;translate:0 -6px;box-shadow:0 1px 2px rgba(11,34,57,.1),0 40px 70px -30px rgba(6,20,36,.6)}}
+
+/* TKS: the one feature that gets a panel of its own */
+.tks-feature{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(28px,5vw,80px);align-items:center;margin-top:clamp(36px,5vw,56px);padding:clamp(28px,4.5vw,60px);border-radius:var(--r-lg);background:var(--band);color:var(--band-ink);position:relative;overflow:hidden;isolation:isolate;border:1px solid var(--band-line)}
+.tks-feature::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 80% at 15% 30%,rgba(158,223,199,.12),transparent 70%)}
+.tks-doc{max-width:360px;justify-self:center}
+.arc-latest{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:var(--band-blue);margin-bottom:14px}
+.arc-latest .dot{width:8px;height:8px;border-radius:50%;background:var(--band-blue);box-shadow:0 0 0 4px rgba(158,223,199,.16)}
+.tks-text .t-tag{color:var(--band-ink-2)}
+.tks-text h4{font-family:var(--f-display);font-size:clamp(1.9rem,3.6vw,3rem);font-weight:740;letter-spacing:-.04em;line-height:1.02}
+.tks-text>p:not(.t-tag):not(.arc-latest):not(.arc-link){color:var(--band-ink-2);margin-top:16px;max-width:52ch}
+.tks-text .arc-meta li{border-color:var(--band-line);color:var(--band-ink-2)}
+.tks-text .link{color:var(--band-ink)}
+
+/* Chapters: a date rail on the left, the story on the right */
+.chapters{list-style:none;margin:clamp(56px,7vw,96px) 0 0;padding:0}
+.chapter{position:relative;display:grid;grid-template-columns:clamp(140px,15vw,200px) minmax(0,1fr);gap:clamp(20px,4vw,56px);padding-bottom:clamp(60px,8vw,110px)}
+.chapter::before{content:"";position:absolute;left:5px;top:22px;bottom:0;width:1px;background:var(--line)}
+.ch-last{padding-bottom:0}
+.ch-last::before{display:none}
+.ch-when{position:relative;padding-left:28px;margin:0;display:flex;flex-direction:column;gap:4px}
+.ch-when::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;border:2px solid var(--blue);background:var(--paper)}
+.ch-when .hand{font-size:1.5rem;line-height:1.1}
+.ch-when span:last-child{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink-3)}
+.ch-body{min-width:0}
+.ch-title{font-family:var(--f-display);font-size:clamp(1.35rem,2.1vw,1.75rem);font-weight:680;letter-spacing:-.025em;line-height:1.15}
+.ch-lede{color:var(--ink-2);max-width:62ch;margin-top:10px}
+.chapter .shelf{margin-top:28px}
+/* the shelf is the widest thing in the archive, so on desktop it runs under the date rail too */
+@media (min-width:921px){.chapter .shelf{position:relative;margin-left:calc(-1*(clamp(140px,15vw,200px) + clamp(20px,4vw,56px)));background:var(--paper);padding-top:8px}}
+.ws{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.ws-doc{rotate:1.5deg}
+@media (max-width:760px){
+  .chapter{grid-template-columns:minmax(0,1fr);gap:14px;padding-left:28px}
+  .chapter::before{top:22px}
+  .ch-when{padding-left:0;flex-direction:row;align-items:baseline;gap:12px}
+  .ch-when::before{left:-28px}
+  .ws{grid-template-columns:1fr}
+  .ws-doc{max-width:520px}
+}
+@media (max-width:920px){.tks-feature{grid-template-columns:1fr}.tks-doc{max-width:300px}}
+
+/* Top-five magnets on a fridge door. Positions are percentages of the door; each tilts by --r */
+.fridge{position:relative;margin-top:28px;height:clamp(380px,36vw,460px);border-radius:var(--r-lg);border:1px solid var(--line);background:linear-gradient(160deg,#F9FBFD 0%,#EBF1F5 55%,#DDE6ED 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -40px 70px -50px rgba(11,34,57,.3)}
+.fridge::after{content:"";position:absolute;right:18px;top:16%;bottom:16%;width:10px;border-radius:6px;background:linear-gradient(90deg,#C7D3DC,#F6F9FB 45%,#BCC9D3);box-shadow:0 6px 12px -6px rgba(11,34,57,.35)}
+:root[data-theme="dark"] .fridge{background:linear-gradient(160deg,#233A50 0%,#1A2E42 60%,#142637 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+:root[data-theme="dark"] .fridge::after{background:linear-gradient(90deg,#2C4760,#46627C 45%,#2A435B)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fridge{background:linear-gradient(160deg,#233A50 0%,#1A2E42 60%,#142637 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}:root:not([data-theme="light"]) .fridge::after{background:linear-gradient(90deg,#2C4760,#46627C 45%,#2A435B)}}
+.mag{--mx:0;--my:0;--lift:0px;position:absolute;border:0;padding:0;background:none;cursor:zoom-in;rotate:var(--r);translate:calc(var(--mx)*1px) calc(var(--my)*1px - var(--lift));filter:drop-shadow(0 2px 1px rgba(11,34,57,.28)) drop-shadow(0 10px 12px rgba(11,34,57,.16));transition:translate .5s var(--ease),rotate .5s var(--ease),filter .5s var(--ease);-webkit-tap-highlight-color:transparent}
+.mag img{width:100%;height:auto;display:block}
+.m1{--r:-4deg;left:5%;top:9%;width:31%}
+.m2{--r:3.5deg;left:40%;top:5%;width:17%}
+.m3{--r:-2deg;left:61%;top:11%;width:27%}
+.m4{--r:2.5deg;left:12%;top:54%;width:27%}
+.m5{--r:-5deg;left:49%;top:48%;width:13.5%}
+.mag-cap{position:absolute;z-index:2;left:50%;top:calc(100% + 10px);translate:-50% 4px;rotate:calc(var(--r)*-1);white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:.78rem;font-weight:560;opacity:0;pointer-events:none;transition:opacity .3s var(--ease),translate .3s var(--ease)}
+.mag-cap em{font-style:normal;opacity:.7;margin-left:6px}
+.mag-x{position:absolute;top:-10px;right:-8px;width:32px;height:32px;display:grid;place-content:center;border-radius:50%;background:var(--blue);color:#fff;font-weight:720;font-size:.82rem;rotate:calc(var(--r)*-1);box-shadow:0 4px 10px rgba(11,34,57,.25)}
+.mag.on,.mag:focus-visible{--lift:8px;z-index:3;filter:drop-shadow(0 4px 2px rgba(11,34,57,.2)) drop-shadow(0 22px 22px rgba(11,34,57,.22))}
+.mag.on .mag-cap,.mag:focus-visible .mag-cap{opacity:1;translate:-50% 0}
+.mag.snap img{animation:magSnap .42s cubic-bezier(.3,1.5,.5,1)}
+@keyframes magSnap{0%{scale:.965}100%{scale:1}}
+@media (hover:hover) and (pointer:fine){
+  .mag:hover{--lift:8px;z-index:3;rotate:calc(var(--r)*.4);filter:drop-shadow(0 4px 2px rgba(11,34,57,.2)) drop-shadow(0 22px 22px rgba(11,34,57,.22))}
+  .mag:hover .mag-cap{opacity:1;translate:-50% 0}
+}
+.fridge-note{margin-top:14px;color:var(--ink-3);font-size:.88rem}
+@media (max-width:640px){
+  .fridge{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:26px 14px;align-items:center;justify-items:center;padding:30px 30px 34px 20px}
+  .fridge::after{right:10px;width:8px}
+  .mag{position:relative;left:auto;top:auto}
+  .m1{grid-column:span 2;width:86%}
+  .m2{width:74%}.m3{width:100%}.m4{width:100%}.m5{width:58%}
+  .mag-cap{white-space:normal;width:max-content;max-width:180px;text-align:center}
+}
+
+/* Pink Power Run: the certificate with the real medal resting on it */
+.ppr-vis{position:relative;max-width:440px;padding:0 20% 11% 0;margin:6px 0 26px}
+.ppr-cert.shot{margin:0;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);rotate:-2deg}
+.ppr-medal{--px:0;--py:0;position:absolute;right:0;bottom:0;width:46%;border:0;padding:0;background:none;cursor:zoom-in;rotate:6deg;translate:calc(var(--px)*1px) calc(var(--py)*1px);filter:drop-shadow(0 18px 20px rgba(11,34,57,.36)) drop-shadow(0 3px 3px rgba(11,34,57,.2));transition:rotate var(--d-slow) var(--ease),translate .6s var(--ease)}
+.ppr-medal img{width:100%}
+@media (hover:hover) and (pointer:fine){.ppr-medal:hover{rotate:0deg}}
+.run-stats{list-style:none;margin:16px 0 4px;padding:14px 0;display:flex;gap:clamp(18px,4vw,36px);flex-wrap:wrap;border-block:1px solid var(--line)}
+.run-stats b{display:block;font-family:var(--f-display);font-size:1.5rem;font-weight:720;letter-spacing:-.02em;color:var(--blue);line-height:1.1}
+.run-stats span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.ctx{margin-top:14px;border-radius:12px;background:var(--blue-ghost);padding:0 14px}
+.ctx summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px;font-size:.88rem;font-weight:560;color:var(--ink-2)}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::before{content:"+";display:grid;place-content:center;width:20px;height:20px;border-radius:50%;border:1px solid currentColor;font-size:.8rem;line-height:1;transition:rotate var(--d-small) var(--ease)}
+.ctx[open] summary::before{rotate:45deg}
+.run .ctx p{margin:0 0 14px!important;color:var(--ink-3)!important;font-size:.88rem;max-width:60ch}
+
+/* ===== Thank-you: the enquiry prints out of a desk printer (printer.js) =====
+   The paper is a physical object, so it stays paper-white in dark mode too. */
+.print-scene{position:relative;padding:calc(var(--nav-h) + clamp(56px,8vw,96px)) 0 clamp(56px,7vw,96px);isolation:isolate;overflow-x:clip}
+.print-scene::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(to bottom,transparent 0 35px,var(--rule) 35px 36px);-webkit-mask:linear-gradient(to bottom,#000 20%,transparent 90%);mask:linear-gradient(to bottom,#000 20%,transparent 90%)}
+.pr-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.pr-copy{position:sticky;top:calc(var(--nav-h) + 56px)}
+.pr-kicker{font-size:1.55rem;rotate:-2deg;margin:0 0 12px}
+.pr-copy h1{font-size:clamp(2.2rem,4.6vw,3.9rem);font-weight:760;letter-spacing:-.045em;line-height:1.03;text-wrap:balance}
+.pr-copy .lede{font-size:clamp(1.05rem,1.4vw,1.18rem);margin-top:18px;max-width:44ch;color:var(--ink-2)}
+.pr-copy .hero-cta{margin-top:28px}
+.pr-status{margin-top:18px;min-height:1.4em;font-family:var(--f-mono);font-size:.82rem;letter-spacing:.06em;color:var(--ink-3)}
+.pr-stage{width:100%;max-width:520px;margin-inline:auto}
+
+.printer{position:relative;z-index:3;height:118px;border-radius:26px 26px 20px 20px;background:linear-gradient(180deg,#17466F 0%,#0F3456 46%,#0B2A47 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -2px 0 rgba(0,0,0,.25),0 30px 50px -26px rgba(6,20,36,.6)}
+.pr-lid{position:absolute;left:18px;right:18px;top:12px;height:20px;border-radius:12px;background:rgba(232,242,249,.06);display:flex;gap:6px;justify-content:flex-end;align-items:center;padding-right:14px}
+.pr-vent{width:18px;height:3px;border-radius:2px;background:rgba(232,242,249,.2)}
+.pr-face{position:absolute;left:24px;right:24px;top:44px;display:flex;align-items:center;gap:10px;color:#E8F2F9;min-width:0}
+.pr-led{flex:none;width:8px;height:8px;border-radius:50%;background:#56697C;box-shadow:0 0 0 3px rgba(232,242,249,.06)}
+.pr-name{font-family:var(--f-display);font-weight:720;font-size:.98rem;letter-spacing:-.015em;white-space:nowrap}
+.pr-name i{font-style:normal;color:#9EDFC7;font-size:1.2rem}
+.pr-model{margin-left:auto;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.18em;color:#A9C2D6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr-slot{position:absolute;left:14px;right:14px;bottom:14px;height:14px;border-radius:8px;background:#041425;box-shadow:inset 0 4px 8px rgba(0,0,0,.75),0 1px 0 rgba(255,255,255,.08)}
+.pr-roller{position:absolute;left:12px;right:12px;top:5px;height:3px;border-radius:2px;background:repeating-linear-gradient(90deg,#235E90 0 6px,#0B2A47 6px 12px)}
+
+/* the feed is clipped at the slot line: paper only exists below it */
+.pr-feed{position:relative;z-index:2;width:calc(100% - 44px);margin:-21px auto 0;clip-path:inset(0 -80px -4000px -80px)}
+.sheet{position:relative;background:#FFFEFA;color:#0B2239;padding:34px clamp(20px,5%,30px) 26px;border-radius:0 0 6px 6px;transform-origin:50% 0;
+  background-image:linear-gradient(180deg,rgba(11,34,57,.07),transparent 26px);
+  box-shadow:0 1px 0 rgba(11,34,57,.06),0 26px 44px -26px rgba(6,20,36,.5);transition:scale .9s var(--ease),box-shadow .9s var(--ease)}
+.sh-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.sh-brand{margin:0;font-family:var(--f-display);font-weight:760;font-size:1.28rem;letter-spacing:-.03em}
+.sh-brand i{font-style:normal;color:#1461A2;font-size:1.45rem}
+.sh-no{margin:0;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;color:#56697C}
+.sh-kicker{margin:4px 0 0;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#1461A2}
+.sh-rule{border:0;height:2px;margin:16px 0 20px;background:linear-gradient(90deg,#1461A2,#2D8FC9 55%,transparent)}
+.sh-dots{height:1px;margin:24px 0 12px;background:repeating-linear-gradient(90deg,rgba(11,34,57,.28) 0 5px,transparent 5px 10px)}
+.sh-fields{margin:0;display:grid;gap:18px}
+.sh-fields dt{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:#56697C;margin-bottom:4px}
+.sh-fields dd{margin:0;font-size:.98rem;font-weight:540;line-height:1.45;overflow-wrap:anywhere}
+.sh-name{font-family:var(--f-display);font-size:1.6rem!important;font-weight:720!important;letter-spacing:-.025em;line-height:1.15!important}
+.sh-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sh-msg{font-weight:420!important;line-height:1.62!important;white-space:pre-wrap;padding:14px 16px;border-left:2px solid #9EDFC7;background:rgba(20,97,162,.045);border-radius:0 10px 10px 0}
+.sh-foot{display:flex;justify-content:space-between;gap:6px 14px;flex-wrap:wrap;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:#56697C}
+.sh-sign{margin:18px 0 0;font-size:1.4rem;color:#1461A2;line-height:1.15;text-align:right}
+@media (max-width:420px){.sh-pair{grid-template-columns:1fr}.sh-name{font-size:1.4rem!important}}
+
+/* motion states */
+.is-animating .pl{opacity:0;animation:prInk .5s ease-out forwards}
+@keyframes prInk{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:none}}
+.is-waking .pr-led{background:#F2C14E;animation:prBlink .18s steps(2) infinite}
+.is-printing .pr-led{background:#F2C14E;animation:prBlink .5s steps(2) infinite}
+.is-printing .printer{animation:prBuzz .12s linear infinite}
+.is-printing .sheet{animation:prShake .13s linear infinite}
+.is-printing .pr-roller{animation:prRoll .35s linear infinite}
+.is-done .pr-led{background:#9EDFC7;box-shadow:0 0 0 3px rgba(158,223,199,.18),0 0 12px rgba(158,223,199,.55)}
+.is-done:not(.is-still) .sheet{scale:1.012;box-shadow:0 1px 0 rgba(11,34,57,.06),0 40px 60px -30px rgba(6,20,36,.55)}
+.is-still .sheet{animation:prFade .4s ease-out both}
+@keyframes prBlink{50%{opacity:.35}}
+@keyframes prBuzz{25%{translate:-.4px .2px}50%{translate:.35px -.2px}75%{translate:.2px .3px}}
+@keyframes prShake{25%{translate:-.5px 0}60%{translate:.45px 0}85%{translate:-.2px 0}}
+@keyframes prRoll{to{background-position:12px 0}}
+@keyframes prFade{from{opacity:0}}
+.pr-empty .pr-feed{display:none}
+
+@media (max-width:860px){
+  /* phones and tablets: heading, then the printer right away, then the buttons */
+  .pr-wrap{display:flex;flex-direction:column}
+  .pr-copy{display:contents}
+  .pr-stage{order:1;margin-top:30px}
+  .pr-copy .hero-cta{order:2;margin-top:34px}
+  .pr-status{order:3}
+  .printer{height:104px}
+  .pr-face{top:40px}
+  .pr-feed{margin-top:-21px}
+}
+@media (max-width:420px){.pr-model{display:none}.pr-feed{width:calc(100% - 28px)}.printer{border-radius:22px 22px 18px 18px}}

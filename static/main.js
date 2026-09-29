@@ -193,28 +193,18 @@ if(lenis)lenis.on('scroll',ScrollTrigger.update);
 const EXPO='expo.out',M=isMobile();
 
 if($('.hero')&&$('#heroTitle .h1-main')){
-const h1=$('#heroTitle .h1-main'),nm=$('.hero-name');
+const h1=$('#heroTitle .h1-main');
 const words=h1.textContent.trim().split(/\s+/);h1.textContent='';
 words.forEach((w,k)=>{const sp=document.createElement('span');sp.className='w';sp.textContent=w;h1.append(sp);if(k<words.length-1)h1.append(' ')});
-const chars=[...nm.textContent];nm.textContent='';chars.forEach(c=>{const sp=document.createElement('span');sp.textContent=c;nm.append(sp)});
 
-/* Page-load sequence. Phones: lighter, no blur, photo wipes up */
+/* Page-load sequence. Phones: lighter, no blur. The photo stage stays still: nothing moves until the visitor brushes it */
 const tl=gsap.timeline({defaults:{ease:EXPO}});
-tl.fromTo('.hero-name span',{yPercent:M?40:70,opacity:0},{yPercent:0,opacity:1,duration:M?1:1.4,stagger:M?.03:.045},0)
-  .fromTo('.hero-meta',{y:14,opacity:0},{y:0,opacity:1,duration:.9},.25)
+tl.fromTo('.hero-meta',{y:14,opacity:0},{y:0,opacity:1,duration:.9},.25)
   .fromTo('#heroTitle .w',M?{y:24,opacity:0}:{yPercent:60,opacity:0,filter:'blur(8px)'},M?{y:0,opacity:1,duration:.8,stagger:.04}:{yPercent:0,opacity:1,filter:'blur(0px)',duration:1.1,stagger:.05},.32)
   .fromTo('.hero-sub',{y:16,opacity:0},{y:0,opacity:1,duration:1},M?.6:.8)
   .fromTo('.hero-cta',{y:16,opacity:0},{y:0,opacity:1,duration:1},M?.7:.92);
-if(M)tl.fromTo('.hero-photo',{clipPath:'inset(100% 0% 0% 0%)',opacity:1,y:30},{clipPath:'inset(0% 0% 0% 0%)',y:0,duration:1.3,ease:'power3.out'},.5);
-else tl.fromTo('.hero-photo',{y:80,opacity:0,filter:'blur(14px)'},{y:0,opacity:1,filter:'blur(0px)',duration:1.5},.15);
-if(!M){tl.fromTo('.note',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.8,stagger:.25},1.2);
-  $$('.note path').forEach(p=>{const L=p.getTotalLength();gsap.fromTo(p,{strokeDasharray:L,strokeDashoffset:L},{strokeDashoffset:0,duration:.9,ease:'power2.out',delay:1.45})})}
-else gsap.set('.note',{opacity:1});
 window.__animReady=true;
 
-/* Hero depth while scrolling away */
-gsap.to('.hero-name',{yPercent:M?14:28,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
-if(!M)gsap.to('.hero-photo',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
 }else{window.__animReady=true}
 
 /* Inner pages: breadcrumb, intro and facts settle in */

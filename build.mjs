@@ -187,7 +187,7 @@ ${bare ? '' : include('<!-- include:partials/chat.html -->')}
 ${bare ? '<script src="/main.js"></script>' : `<script src="/vendor/gsap.min.js"></script>
 <script src="/vendor/ScrollTrigger.min.js"></script>
 <script src="/vendor/lenis.min.js"></script>
-<script src="/main.js"></script>
+<script src="/main.js"></script>${isHome ? '\n<script src="/brush.js"></script>' : ''}
 <script src="/bot.js"></script>`}${analytics}
 </body>
 </html>
